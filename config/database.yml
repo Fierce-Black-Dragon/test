@@ -23,7 +23,7 @@ default: &default
 
 development:
   <<: *default
-  database: link_tree_rortsrs_development
+  database: PSP
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -57,7 +57,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: link_tree_rortsrs_test
+  database: PSP
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -81,6 +81,6 @@ test:
 #
 production:
   <<: *default
-  database: link_tree_rortsrs_production
-  username: link_tree_rortsrs
-  password: <%= ENV["LINK_TREE_RORTSRS_DATABASE_PASSWORD"] %>
+  database: PSP
+  username: <%= ENV["DB_USER"] %>
+  password: <%= ENV["DB_PWD"] %>
